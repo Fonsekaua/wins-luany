@@ -68,7 +68,11 @@ const cards = [
         message: "SHINEEE!!!!💥💥💥💥💥💥💥"
     }
 ];
-
+function cardData(url = "", author = "", message = "") {
+    card.querySelector(".banner").src = url
+    card.querySelector(".info .author").textContent = author
+    card.querySelector(".info .message").textContent = message
+}
 
 function som(src) {
     const audio = document.createElement("audio")
@@ -80,18 +84,17 @@ function som(src) {
 }
 
 let cliques = localStorage.getItem('click') ?? 0
- contador.innerHTML = `Cliques: ${cliques}`
+contador.innerHTML = `Cliques: ${cliques}`
 clique.addEventListener("click", () => {
-    let random = Math.floor(Math.random(0) * 67)
+    let random = Math.floor(Math.random(0) * 100)
     som('./sons/click.mp3').play()
     cliques++
     contador.innerHTML = `Cliques: ${cliques}`
-    localStorage.setItem('click',cliques);
+    localStorage.setItem('click', cliques);
     cards.forEach((element, index) => {
         if (random == index) {
-            card.querySelector(".banner").src = element.img 
-            card.querySelector(".info .author").textContent = element.name
-            card.querySelector(".info .message").textContent = element.message
+            cardData()
+            cardData(element.img,element.name,element.message)
 
             card.classList.add('active')
 
@@ -113,9 +116,9 @@ function mover(y) {
     const deltaY = y - inicioY;
 
     if (deltaY < -50) {
-        console.log("⬆️ Puxou para cima");
-        card.classList.remove("active");
+        console.log("⬆️ Puxou para cima");  
         arrastando = false;
+        card.classList.remove("active");
     }
 }
 
