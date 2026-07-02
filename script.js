@@ -83,13 +83,13 @@ let cliques = localStorage.getItem('click') ?? 0
  contador.innerHTML = `Cliques: ${cliques}`
 clique.addEventListener("click", () => {
     let random = Math.floor(Math.random(0) * 67)
-    som('/sons/click.mp3').play()
+    som('./sons/click.mp3').play()
     cliques++
     contador.innerHTML = `Cliques: ${cliques}`
     localStorage.setItem('click',cliques);
     cards.forEach((element, index) => {
         if (random == index) {
-            card.querySelector(".banner").src = element.img
+            card.querySelector(".banner").src =`.${element.img}` 
             card.querySelector(".info .author").textContent = element.name
             card.querySelector(".info .message").textContent = element.message
 
