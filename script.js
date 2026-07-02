@@ -88,7 +88,7 @@ clique.addEventListener("click", () => {
     contador.innerHTML = `Cliques: ${cliques}`
     localStorage.setItem('click',cliques);
     cards.forEach((element, index) => {
-        if (9 == index) {
+        if (random == index) {
             card.querySelector(".banner").src = element.img 
             card.querySelector(".info .author").textContent = element.name
             card.querySelector(".info .message").textContent = element.message
