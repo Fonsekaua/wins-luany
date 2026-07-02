@@ -49,7 +49,7 @@ const cards = [
     },
     {
         name: "Silva",
-        img: "./cards/silva.jpeg",
+        img: "./cards/kaua.jpeg",
         message: "😏📚 Passou, né? Claro... comigo ensinando fica fácil! 🤓☝️ Brincadeiras à parte, você mandou MUITO bem! 💯🔥 Eu falei que isso era fichinha pra você. Agora é só continuar amassando todo mundo (menos eu) na WorldSkills! 🏆🚀🐉"
     },
     {
@@ -88,7 +88,7 @@ clique.addEventListener("click", () => {
     contador.innerHTML = `Cliques: ${cliques}`
     localStorage.setItem('click',cliques);
     cards.forEach((element, index) => {
-        if (random == index) {
+        if (9 == index) {
             card.querySelector(".banner").src = element.img 
             card.querySelector(".info .author").textContent = element.name
             card.querySelector(".info .message").textContent = element.message
